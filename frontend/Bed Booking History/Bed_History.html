@@ -1,0 +1,292 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>HealthCore AI - Bed Booking &amp; Ward Management</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Bed_History.css">
+
+</head>
+<body class="text-on-surface flex min-h-screen">
+<!-- Top AppBar (TopNavBar) -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-outline-variant">
+    <div class="flex justify-between items-center w-full px-6 py-4">
+        <div class="flex items-center gap-4">
+            <span class="text-title-lg font-title-lg font-bold text-primary tracking-tight">HealthCore AI</span>
+            <div
+                class="hidden md:flex ml-8 items-center bg-surface-container-high rounded-full px-4 py-2 gap-3 w-80">
+                <span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+                <input
+                    class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-full placeholder:text-on-surface-variant"
+                    placeholder="Search patient data..." type="text">
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <button
+                class="p-2 hover:bg-surface-container rounded-full text-on-surface-variant transition-colors relative">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+            </button>
+            <div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
+                <div class="hidden md:block text-right">
+                    <p class="text-label-md font-label-md">Dr. Sarah Johnson</p>
+                    <p class="text-label-sm font-label-sm text-on-surface-variant">Chief Medical Officer</p>
+                </div>
+                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+                    <img class="w-full h-full object-cover"
+                        data-alt="A professional headshot of a friendly female doctor in a clinical setting, wearing a white coat and a stethoscope. The background is a clean, modern medical office with soft natural lighting and warm wood accents, emphasizing trust and expertise in a premium healthcare environment."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIh0ZNgltnGqyFjSH_CLxwMORD2J-OCLtaE9952nH1wsbKjeBHgE1IbbZGnAo9Ip0yZmuIL2VYol4PetCT4cIHzA7DaIcN7tGR6JdpDgdVYWC8o6I5pJgUBa4zNVzgS949TWZTfZRSC8S3dDw5AWCPWmKKi7N4vxg7FnooIKhQr2nvE4m8F1K4yP9VWUkzkhRjb_R8lYLeGu_AIlITcAZaSWThKf9h5OlMKgtXRc_BolD_I7Jq6iILQt3LeM8vvmsIiCN9zx2CNpY">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Sidebar (SideNavBar) -->
+<aside class="hidden md:flex flex-col gap-4 py-8 h-screen w-64 fixed left-0 top-0 pt-20 bg-surface-container-low border-r border-outline-variant z-40">
+<div class="px-6 mb-4">
+<h2 class="text-title-lg font-title-lg font-bold text-primary">Medical History</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Health Records</p>
+</div>
+<nav class="flex-1 space-y-2 px-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="../dashbord/dashbord.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-body-md font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="../appoint History/appointment.html">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-body-md font-body-md">Appointment History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="../prescription History/prescription.html">
+<span class="material-symbols-outlined">medical_services</span>
+<span class="text-body-md font-body-md">Prescription History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="../Report History/report.html">
+<span class="material-symbols-outlined">description</span>
+<span class="text-body-md font-body-md">Report History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container font-semibold rounded-lg hover:translate-x-1 transition-all duration-200" href="../Bed Booking History/Bed_History.html">
+<span class="material-symbols-outlined">bed</span>
+<span class="text-body-md font-body-md">Bed Booking Info</span>
+</a></nav>
+<div class="px-2 mt-auto border-t border-outline-variant pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-body-md font-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-body-md font-body-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 flex-1 flex flex-col min-h-screen pt-24">
+<!-- Content Canvas -->
+<div class="p-margin flex flex-col gap-lg">
+<!-- Metric Cards Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+
+
+
+
+</section>
+<!-- Main Interactive Section: Table and AI Card -->
+<div class="flex flex-col lg:flex-row gap-lg">
+<!-- Detailed Table: Current Reservations -->
+<div class="flex-[3] glass-card rounded-xl shadow-sm flex flex-col overflow-hidden">
+<div class="p-md border-b border-outline-variant/30 flex justify-between items-center bg-white">
+<h3 class="text-title-lg font-title-lg text-on-surface">Bed Reservations</h3>
+<div class="flex items-center gap-sm">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="pl-10 pr-4 py-2 border border-outline-variant/50 rounded-lg text-body-sm font-body-sm focus:ring-2 focus:ring-primary focus:outline-none bg-surface-container-lowest" placeholder="Search patients..." type="text">
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg flex items-center gap-sm font-label-md text-label-md shadow-md hover:bg-on-primary-fixed-variant transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-sm">add</span>
+                                New Booking
+                            </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-md py-sm font-label-md text-label-md text-outline uppercase tracking-wider">Patient Name</th>
+<th class="px-md py-sm font-label-md text-label-md text-outline uppercase tracking-wider">Ward/Room</th>
+<th class="px-md py-sm font-label-md text-label-md text-outline uppercase tracking-wider">Admission Date</th>
+<th class="px-md py-sm font-label-md text-label-md text-outline uppercase tracking-wider">Status</th>
+<th class="px-md py-sm font-label-md text-label-md text-outline uppercase tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 bg-white">
+<!-- Row 1 -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xs">EL</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Elias Vance</p>
+<p class="text-body-sm font-body-sm text-outline">ID: #HC-8291</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md">General Ward B</span>
+<span class="text-body-sm font-body-sm text-outline">Room 402, Bed 03</span>
+</div>
+</td>
+<td class="px-md py-md">
+<p class="font-body-md text-body-md">Oct 24, 2024</p>
+<p class="text-body-sm font-body-sm text-outline">10:45 AM</p>
+</td>
+<td class="px-md py-md">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20">Occupied</span>
+</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-base opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/10 rounded-lg text-primary transition-colors" title="Edit Reservation">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors" title="Discharge Patient">
+<span class="material-symbols-outlined text-sm">logout</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-secondary flex items-center justify-center font-bold text-xs">SM</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Sarah Miller</p>
+<p class="text-body-sm font-body-sm text-outline">ID: #HC-7732</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md">ICU Unit A</span>
+<span class="text-body-sm font-body-sm text-outline">Room 101, Bed 01</span>
+</div>
+</td>
+<td class="px-md py-md">
+<p class="font-body-md text-body-md">Oct 25, 2024</p>
+<p class="text-body-sm font-body-sm text-outline">Expected 02:00 PM</p>
+</td>
+<td class="px-md py-md">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-tertiary-container/20 text-tertiary border border-tertiary/20">Reserved</span>
+</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-base opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/10 rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined text-sm">cancel</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-bold text-xs">RK</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Robert Kagawa</p>
+<p class="text-body-sm font-body-sm text-outline">ID: #HC-9110</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md">Maternity Ward</span>
+<span class="text-body-sm font-body-sm text-outline">Room 305, Bed 12</span>
+</div>
+</td>
+<td class="px-md py-md">
+<p class="font-body-md text-body-md">Oct 22, 2024</p>
+<p class="text-body-sm font-body-sm text-outline">Pending Discharge</p>
+</td>
+<td class="px-md py-md">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-secondary/10 text-secondary border border-secondary/20">Discharging</span>
+</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-base opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-secondary text-white px-3 py-1.5 rounded-lg font-label-md text-label-md flex items-center gap-xs">
+                                                Confirm Exit
+                                            </button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xs">AJ</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Amara Johnson</p>
+<p class="text-body-sm font-body-sm text-outline">ID: #HC-8843</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md">Surgery Dept</span>
+<span class="text-body-sm font-body-sm text-outline">Room 210, Bed 05</span>
+</div>
+</td>
+<td class="px-md py-md">
+<p class="font-body-md text-body-md">Oct 24, 2024</p>
+<p class="text-body-sm font-body-sm text-outline">09:15 AM</p>
+</td>
+<td class="px-md py-md">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20">Occupied</span>
+</td>
+<td class="px-md py-md">
+<div class="flex items-center gap-base opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary/10 rounded-lg text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined text-sm">logout</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-md bg-white border-t border-outline-variant/30 flex items-center justify-between">
+<span class="text-body-sm font-body-sm text-outline">Showing 4 of 32 active reservations</span>
+<div class="flex items-center gap-xs">
+<button class="p-2 rounded-lg border border-outline-variant/30 hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<span class="font-label-md text-label-md px-4">Page 1 of 8</span>
+<button class="p-2 rounded-lg border border-outline-variant/30 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- AI Sidebar: Predictive Occupancy Insight -->
+
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-md px-margin mt-auto border-t border-outline-variant/30 dark:border-outline/20 bg-surface dark:bg-background">
+
+</footer>
+</main>
+
+<script src="Bed_History.js"></script>
+
+</body></html>

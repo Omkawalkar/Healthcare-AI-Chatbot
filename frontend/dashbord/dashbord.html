@@ -1,11 +1,18 @@
-<!DOCTYPE html><html class="light" lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>HealthCore AI | Clinical Dashboard</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>HealthCore AI | Clinical Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="dashbord.css">
 
@@ -13,210 +20,270 @@
 
 
 </head>
+
 <body class="bg-background text-on-surface flex min-h-screen">
-<!-- Sidebar (SideNavBar) -->
-<aside class="hidden md:flex flex-col gap-4 py-8 h-screen w-64 fixed left-0 top-0 pt-20 bg-surface-container-low border-r border-outline-variant z-40">
-<div class="px-6 mb-4">
-<h2 class="text-title-lg font-title-lg font-bold text-primary">Medical History</h2>
-<p class="text-body-md font-body-md text-on-surface-variant">Health Records</p>
-</div>
-<nav class="flex-1 space-y-2 px-2">
-<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container font-semibold rounded-lg hover:translate-x-1 transition-all duration-200" href="#">
-<span class="material-symbols-outlined">calendar_month</span>
-<span class="text-body-md font-body-md">Appointment History</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="#">
-<span class="material-symbols-outlined">medical_services</span>
-<span class="text-body-md font-body-md">Prescription History</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="#">
-<span class="material-symbols-outlined">description</span>
-<span class="text-body-md font-body-md">Report History</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200" href="#">
-<span class="material-symbols-outlined">bed</span>
-<span class="text-body-md font-body-md">Bed Booking Info</span>
-</a></nav>
-<div class="px-2 mt-auto border-t border-outline-variant pt-4">
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="text-body-md font-body-md">Settings</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
-<span class="material-symbols-outlined">help</span>
-<span class="text-body-md font-body-md">Support</span>
-</a>
-</div>
-</aside>
-<!-- Top AppBar (TopNavBar) -->
-<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-outline-variant">
-<div class="flex justify-between items-center w-full px-6 py-4">
-<div class="flex items-center gap-4">
-<span class="text-title-lg font-title-lg font-bold text-primary tracking-tight">HealthCore AI</span>
-<div class="hidden md:flex ml-8 items-center bg-surface-container-high rounded-full px-4 py-2 gap-3 w-80">
-<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-full placeholder:text-on-surface-variant" placeholder="Search patient data..." type="text">
-</div>
-</div>
-<div class="flex items-center gap-4">
-<button class="p-2 hover:bg-surface-container rounded-full text-on-surface-variant transition-colors relative">
-<span class="material-symbols-outlined">notifications</span>
-<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
-</button>
-<div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
-<div class="hidden md:block text-right">
-<p class="text-label-md font-label-md">Dr. Sarah Johnson</p>
-<p class="text-label-sm font-label-sm text-on-surface-variant">Chief Medical Officer</p>
-</div>
-<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
-<img class="w-full h-full object-cover" data-alt="A professional headshot of a friendly female doctor in a clinical setting, wearing a white coat and a stethoscope. The background is a clean, modern medical office with soft natural lighting and warm wood accents, emphasizing trust and expertise in a premium healthcare environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIh0ZNgltnGqyFjSH_CLxwMORD2J-OCLtaE9952nH1wsbKjeBHgE1IbbZGnAo9Ip0yZmuIL2VYol4PetCT4cIHzA7DaIcN7tGR6JdpDgdVYWC8o6I5pJgUBa4zNVzgS949TWZTfZRSC8S3dDw5AWCPWmKKi7N4vxg7FnooIKhQr2nvE4m8F1K4yP9VWUkzkhRjb_R8lYLeGu_AIlITcAZaSWThKf9h5OlMKgtXRc_BolD_I7Jq6iILQt3LeM8vvmsIiCN9zx2CNpY">
-</div>
-</div>
-</div>
-</div>
-</header>
-<!-- Main Content Canvas -->
-<main class="flex-1 md:ml-64 pt-24 pb-12 px-6 md:px-margin">
-<div class="max-w-6xl mx-auto space-y-8">
-<!-- Header Section -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-<div>
-<h1 class="text-headline-lg font-headline-lg text-on-background">Welcome back, Sarah</h1>
-<p class="text-body-lg font-body-lg text-on-surface-variant mt-1">Here's what's happening with your clinic today.</p>
-</div>
-<div class="bg-primary-container text-on-primary px-4 py-2 rounded-xl flex items-center gap-3">
-<span class="material-symbols-outlined">vital_signs</span>
-<span class="text-label-md font-label-md">System Status: AI Diagnostic Core Online</span>
-</div>
-</div>
-<!-- Dashboard Bento Grid (2x2) -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<!-- Appointment Booking -->
-<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow group">
-<div class="flex justify-between items-start mb-6">
-<div class="p-3 bg-primary/10 text-primary rounded-xl group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined text-[32px]">calendar_month</span>
-</div>
-<span class="text-label-sm font-label-sm bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-full">New Requests</span>
-</div>
-<h3 class="text-title-lg font-title-lg mb-2">Appointment Booking</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6">Schedule or manage consultations with specialist physicians based on live availability.</p>
-<button class="w-full py-3 bg-primary text-on-primary rounded-lg font-semibold hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
-<span class="">Book Appointment</span>
-<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</button>
-</div>
-<!-- Prescription Analyzer -->
-<div class="ai-border-gradient p-6 rounded-xl shadow-sm group">
-<div class="flex justify-between items-start mb-6">
-<div class="p-3 bg-tertiary/10 text-tertiary rounded-xl">
-<span class="material-symbols-outlined text-[32px]">pill</span>
-</div>
-<div class="flex items-center gap-1 text-label-sm font-label-sm text-primary">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+    <!-- Sidebar (SideNavBar) -->
+    <aside
+        class="hidden md:flex flex-col gap-4 py-8 h-screen w-64 fixed left-0 top-0 pt-20 bg-surface-container-low border-r border-outline-variant z-40">
+        <div class="px-6 mb-4">
+            <h2 class="text-title-lg font-title-lg font-bold text-primary">Medical History</h2>
+            <p class="text-body-md font-body-md text-on-surface-variant">Health Records</p>
+        </div>
+        <nav class="flex-1 space-y-2 px-2">
+            <a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container font-semibold rounded-lg hover:translate-x-1 transition-all duration-200"
+                href="../dashbord/dashbord.html">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="text-body-md font-body-md">Dashboard</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200"
+                href="../appoint History/appointment.html">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="text-body-md font-body-md">Appointment History</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200"
+                href="../prescription History/prescription.html">
+                <span class="material-symbols-outlined">medical_services</span>
+                <span class="text-body-md font-body-md">Prescription History</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200"
+                href="../Report History/report.html">
+                <span class="material-symbols-outlined">description</span>
+                <span class="text-body-md font-body-md">Report History</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg hover:translate-x-1 transition-all duration-200"
+                href="../Bed Booking History/Bed_History.html">
+                <span class="material-symbols-outlined">bed</span>
+                <span class="text-body-md font-body-md">Bed Booking Info</span>
+            </a>
+        </nav>
+        <div class="px-2 mt-auto border-t border-outline-variant pt-4">
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all"
+                href="#">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="text-body-md font-body-md">Settings</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all"
+                href="#">
+                <span class="material-symbols-outlined">help</span>
+                <span class="text-body-md font-body-md">Support</span>
+            </a>
+        </div>
+    </aside>
+    <!-- Top AppBar (TopNavBar) -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-outline-variant">
+        <div class="flex justify-between items-center w-full px-6 py-4">
+            <div class="flex items-center gap-4">
+                <span class="text-title-lg font-title-lg font-bold text-primary tracking-tight">HealthCore AI</span>
+                <div
+                    class="hidden md:flex ml-8 items-center bg-surface-container-high rounded-full px-4 py-2 gap-3 w-80">
+                    <span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+                    <input
+                        class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-full placeholder:text-on-surface-variant"
+                        placeholder="Search patient data..." type="text">
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="p-2 hover:bg-surface-container rounded-full text-on-surface-variant transition-colors relative">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+                </button>
+                <div class="flex items-center gap-3 pl-4 border-l border-outline-variant">
+                    <div class="hidden md:block text-right">
+                        <p class="text-label-md font-label-md">Dr. Sarah Johnson</p>
+                        <p class="text-label-sm font-label-sm text-on-surface-variant">Chief Medical Officer</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A professional headshot of a friendly female doctor in a clinical setting, wearing a white coat and a stethoscope. The background is a clean, modern medical office with soft natural lighting and warm wood accents, emphasizing trust and expertise in a premium healthcare environment."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIh0ZNgltnGqyFjSH_CLxwMORD2J-OCLtaE9952nH1wsbKjeBHgE1IbbZGnAo9Ip0yZmuIL2VYol4PetCT4cIHzA7DaIcN7tGR6JdpDgdVYWC8o6I5pJgUBa4zNVzgS949TWZTfZRSC8S3dDw5AWCPWmKKi7N4vxg7FnooIKhQr2nvE4m8F1K4yP9VWUkzkhRjb_R8lYLeGu_AIlITcAZaSWThKf9h5OlMKgtXRc_BolD_I7Jq6iILQt3LeM8vvmsIiCN9zx2CNpY">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="flex-1 md:ml-64 pt-24 pb-12 px-6 md:px-margin">
+        <div class="max-w-6xl mx-auto space-y-8">
+            <!-- Header Section -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h1 class="text-headline-lg font-headline-lg text-on-background">Welcome back, Sarah</h1>
+                    <p class="text-body-lg font-body-lg text-on-surface-variant mt-1">Here's what's happening with your
+                        clinic today.</p>
+                </div>
+                <div class="bg-primary-container text-on-primary px-4 py-2 rounded-xl flex items-center gap-3">
+                    <span class="material-symbols-outlined">vital_signs</span>
+                    <span class="text-label-md font-label-md">System Status: AI Diagnostic Core Online</span>
+                </div>
+            </div>
+            <!-- Dashboard Bento Grid (2x2) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                <!-- Appointment Booking -->
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div
+                            class="p-3 bg-primary/10 text-primary rounded-xl group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-[32px]">calendar_month</span>
+                        </div>
+                        <span
+                            class="text-label-sm font-label-sm bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-full">New
+                            Requests</span>
+                    </div>
+                    <h3 class="text-title-lg font-title-lg mb-2">Appointment Booking</h3>
+                    <p class="text-body-md font-body-md text-on-surface-variant mb-6">Schedule or manage consultations
+                        with specialist physicians based on live availability.</p>
+                    <button
+                        class="w-full py-3 bg-primary text-on-primary rounded-lg font-semibold hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                        <span class="">Book Appointment</span>
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                </div>
+                <!-- Prescription Analyzer -->
+                <div class="ai-border-gradient p-6 rounded-xl shadow-sm group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-tertiary/10 text-tertiary rounded-xl">
+                            <span class="material-symbols-outlined text-[32px]">pill</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-label-sm font-label-sm text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                                style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
                             AI Enhanced
                         </div>
-</div>
-<h3 class="text-title-lg font-title-lg mb-2">Prescription Analyzer</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6">Instantly extract data and detect potential drug interactions using our clinical LLM.</p>
-<button class="w-full py-3 bg-surface-container-high text-primary border border-primary/20 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
-<span class="">Analyze Prescription</span>
-<span class="material-symbols-outlined text-[18px]">upload</span>
-</button>
-</div>
-<!-- Report Analyzer -->
-<div class="ai-border-gradient p-6 rounded-xl shadow-sm group">
-<div class="flex justify-between items-start mb-6">
-<div class="p-3 bg-secondary/10 text-secondary rounded-xl">
-<span class="material-symbols-outlined text-[32px]">description</span>
-</div>
-<div class="flex items-center gap-1 text-label-sm font-label-sm text-primary">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    </div>
+                    <h3 class="text-title-lg font-title-lg mb-2">Prescription Analyzer</h3>
+                    <p class="text-body-md font-body-md text-on-surface-variant mb-6">Instantly extract data and detect
+                        potential drug interactions using our clinical LLM.</p>
+                    <button
+                        class="w-full py-3 bg-surface-container-high text-primary border border-primary/20 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                        <span class="">Analyze Prescription</span>
+                        <span class="material-symbols-outlined text-[18px]">upload</span>
+                    </button>
+                </div>
+                <!-- Report Analyzer -->
+                <div class="ai-border-gradient p-6 rounded-xl shadow-sm group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-secondary/10 text-secondary rounded-xl">
+                            <span class="material-symbols-outlined text-[32px]">description</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-label-sm font-label-sm text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                                style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
                             Multi-Modal
                         </div>
-</div>
-<h3 class="text-title-lg font-title-lg mb-2">Report Analyzer</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6">Upload blood panels, MRI scans, or lab reports for immediate AI-driven preliminary analysis.</p>
-<button class="w-full py-3 bg-surface-container-high text-primary border border-primary/20 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
-<span class="">Upload Report</span>
-<span class="material-symbols-outlined text-[18px]">add_circle</span>
-</button>
-</div>
-<!-- Bed Booking -->
-<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow group">
-<div class="flex justify-between items-start mb-6">
-<div class="p-3 bg-error/10 text-error rounded-xl group-hover:bg-error group-hover:text-white transition-colors">
-<span class="material-symbols-outlined text-[32px]">bed</span>
-</div>
-<span class="text-label-sm font-label-sm bg-error-container text-on-error-container px-3 py-1 rounded-full">85% Occupied</span>
-</div>
-<h3 class="text-title-lg font-title-lg mb-2">Bed Booking</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-6">Monitor real-time ward capacity across the facility and reserve critical care beds.</p>
-<button class="w-full py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
-<span class="">Reserve Bed</span>
-<span class="material-symbols-outlined text-[18px]">location_on</span>
-</button>
-</div>
-</div>
-<!-- AI Chat Section (Large Panel) -->
-<section class="mt-xl">
-<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
-<div class="p-6 border-b border-outline-variant bg-surface-container-low flex items-center gap-4">
-<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white shadow-lg">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
-</div>
-<div>
-<h2 class="text-title-lg font-title-lg">HealthCore AI Assistant</h2>
-<p class="text-label-sm font-label-sm text-secondary">Secured by HIPAA-compliant encryption</p>
-</div>
-</div>
-<div class="p-8 space-y-8">
-<!-- Suggested Prompts -->
-<div class="flex flex-wrap gap-3">
-<button class="px-4 py-2 bg-surface-container text-body-sm font-body-sm rounded-full border border-outline-variant hover:bg-primary/10 hover:text-primary transition-all">
+                    </div>
+                    <h3 class="text-title-lg font-title-lg mb-2">Report Analyzer</h3>
+                    <p class="text-body-md font-body-md text-on-surface-variant mb-6">Upload blood panels, MRI scans, or
+                        lab reports for immediate AI-driven preliminary analysis.</p>
+                    <button
+                        class="w-full py-3 bg-surface-container-high text-primary border border-primary/20 rounded-lg font-semibold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                        <span class="">Upload Report</span>
+                        <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                    </button>
+                </div>
+                <!-- Bed Booking -->
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div
+                            class="p-3 bg-error/10 text-error rounded-xl group-hover:bg-error group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-[32px]">bed</span>
+                        </div>
+                        <span
+                            class="text-label-sm font-label-sm bg-error-container text-on-error-container px-3 py-1 rounded-full">85%
+                            Occupied</span>
+                    </div>
+                    <h3 class="text-title-lg font-title-lg mb-2">Bed Booking</h3>
+                    <p class="text-body-md font-body-md text-on-surface-variant mb-6">Monitor real-time ward capacity
+                        across the facility and reserve critical care beds.</p>
+                    <button
+                        class="w-full py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
+                        <span class="">Reserve Bed</span>
+                        <span class="material-symbols-outlined text-[18px]">location_on</span>
+                    </button>
+                </div>
+            </div>
+            <!-- AI Chat Section (Large Panel) -->
+            <section class="mt-xl">
+                <div
+                    class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm">
+                    <div class="p-6 border-b border-outline-variant bg-surface-container-low flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white shadow-lg">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+                        </div>
+                        <div>
+                            <h2 class="text-title-lg font-title-lg">HealthCore AI Assistant</h2>
+                            <p class="text-label-sm font-label-sm text-secondary">Secured by HIPAA-compliant encryption
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-8 space-y-8">
+                        <!-- Suggested Prompts -->
+                        <div class="flex flex-wrap gap-3">
+                            <button
+                                class="px-4 py-2 bg-surface-container text-body-sm font-body-sm rounded-full border border-outline-variant hover:bg-primary/10 hover:text-primary transition-all">
                                 Analyze my report
                             </button>
-<button class="px-4 py-2 bg-surface-container text-body-sm font-body-sm rounded-full border border-outline-variant hover:bg-primary/10 hover:text-primary transition-all">
+                            <button
+                                class="px-4 py-2 bg-surface-container text-body-sm font-body-sm rounded-full border border-outline-variant hover:bg-primary/10 hover:text-primary transition-all">
                                 Book an appointment
                             </button>
-<button class="px-4 py-2 bg-surface-container text-body-sm font-body-sm rounded-full border border-outline-variant hover:bg-primary/10 hover:text-primary transition-all">
+                            <button
+                                class="px-4 py-2 bg-surface-container text-body-sm font-body-sm rounded-full border border-outline-variant hover:bg-primary/10 hover:text-primary transition-all">
                                 Find nearby hospitals
                             </button>
-<button class="px-4 py-2 bg-surface-container text-body-sm font-body-sm rounded-full border border-outline-variant hover:bg-primary/10 hover:text-primary transition-all">
+                            <button
+                                class="px-4 py-2 bg-surface-container text-body-sm font-body-sm rounded-full border border-outline-variant hover:bg-primary/10 hover:text-primary transition-all">
                                 Medicine information
                             </button>
-</div>
-<!-- Chat Input Box -->
-<div class="relative group">
-<div class="absolute inset-0 bg-primary/5 rounded-full blur-xl group-focus-within:blur-2xl transition-all"></div>
-<div class="relative flex items-center bg-surface p-2 rounded-full border-2 border-outline-variant focus-within:border-primary transition-all">
-<button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined">mic</span>
-</button>
-<input class="flex-1 bg-transparent border-none focus:ring-0 text-body-md font-body-md px-4 placeholder:text-on-surface-variant" placeholder="Ask your AI Health Assistant..." type="text">
-<button class="p-3 bg-primary text-white rounded-full hover:shadow-lg active:scale-95 transition-all">
-<span class="material-symbols-outlined">send</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-<!-- Footer -->
-<footer class="fixed bottom-0 left-0 right-0 md:left-64 z-40 bg-surface-container-lowest border-t border-outline-variant">
-<div class="flex flex-col md:flex-row justify-between items-center gap-4 px-8 py-4">
-<span class="text-label-md font-label-md font-bold text-primary">HealthCore AI</span>
-<p class="text-body-sm font-body-sm text-on-surface-variant">© 2024 HealthCore Diagnostics. AI-enhanced clinical insights.</p>
-<div class="flex gap-6">
-<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
-<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Service</a>
-<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary underline transition-all" href="#">AI Ethics</a>
-</div>
-</div>
-</footer>
+                        </div>
+                        <!-- Chat Input Box -->
+                        <div class="relative group">
+                            <div
+                                class="absolute inset-0 bg-primary/5 rounded-full blur-xl group-focus-within:blur-2xl transition-all">
+                            </div>
+                            <div
+                                class="relative flex items-center bg-surface p-2 rounded-full border-2 border-outline-variant focus-within:border-primary transition-all">
+                                <button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined">mic</span>
+                                </button>
+                                <input
+                                    class="flex-1 bg-transparent border-none focus:ring-0 text-body-md font-body-md px-4 placeholder:text-on-surface-variant"
+                                    placeholder="Ask your AI Health Assistant..." type="text">
+                                <button
+                                    class="p-3 bg-primary text-white rounded-full hover:shadow-lg active:scale-95 transition-all">
+                                    <span class="material-symbols-outlined">send</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="fixed bottom-0 left-0 right-0 md:left-64 z-40 bg-surface-container-lowest border-t border-outline-variant">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 px-8 py-4">
+            <span class="text-label-md font-label-md font-bold text-primary">HealthCore AI</span>
+            <p class="text-body-sm font-body-sm text-on-surface-variant">© 2024 HealthCore Diagnostics. AI-enhanced
+                clinical insights.</p>
+            <div class="flex gap-6">
+                <a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                    href="#">Privacy Policy</a>
+                <a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                    href="#">Terms of Service</a>
+                <a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                    href="#">AI Ethics</a>
+            </div>
+        </div>
+    </footer>
 
-<script src="dashbord.js"></script>
+    <script src="dashbord.js"></script>
 
-</body></html>
+</body>
+
+</html>
