@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign In | HealthAI Precision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="login.css">
+
+</head>
+<body class="min-h-screen flex items-center justify-center">
+<main class="flex min-h-screen w-full flex-col md:flex-row bg-surface">
+<!-- Left Side: Visual Inspiration -->
+<section class="hidden md:flex relative w-1/2 flex-col items-center justify-center bg-surface-container overflow-hidden">
+<!-- Animated background elements -->
+<div class="absolute inset-0 z-0 opacity-40">
+<div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/10 blur-[100px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-secondary/10 blur-[120px]"></div>
+</div>
+<!-- Content Container -->
+<div class="relative z-10 flex flex-col items-center text-center px-xl">
+<!-- Branding Header -->
+<div class="absolute top-margin left-margin flex items-center gap-base">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">health_metrics</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">HealthAI Precision</span>
+</div>
+<!-- Abstract 3D Hero Graphic -->
+<div class="w-full max-w-lg mb-lg float-animation">
+<img class="w-full h-auto drop-shadow-2xl" data-alt="A sophisticated high-fidelity 3D abstract representation of a human brain crafted from translucent, glass-like blue and teal organic modules. The structure is illuminated from within by a soft, clinical glow, creating complex refractive patterns. The background is a pristine, minimalist white gallery space with soft ambient shadows, emphasizing a clean, high-end medical technology aesthetic. The mood is serene, precise, and intellectually advanced, utilizing a palette of deep blues and airy teals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBNhDaI74_9kqkoKzTBf7Ui2QbHKK8LPS4c78_0UNQSJP4E-f0WKD99tTnH8QlGcjujMdM55zUjYnJ-wju0UDt1A5TYYA4iAVbgABhmDIg_jqBZ0ufqpRDI5Hqaz9qCbZ4ZUcLc1wPBSGbRReK-pVyqFp4ZG4nhAIptxbLXsgmHCSzY0pytdlOF1QRwIIplhqgDc9UhGu6f-ZIKOzPIYRZlsunG8RcR8O7hQ6AsfYWCUHthDRE0jxjMSvIUdb1PwNYvemEFarqCF0"/>
+</div>
+<!-- Title -->
+<h1 class="font-display-lg text-display-lg text-on-surface mb-base leading-tight">
+                    Clinical Intelligence,<br/><span class="text-primary">Redefined.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Harnessing state-of-the-art neural architecture to deliver precision diagnostics for modern healthcare providers.
+                </p>
+</div>
+<!-- Subtle Decorative Badge -->
+<div class="absolute bottom-margin flex items-center gap-sm px-md py-base rounded-full glass-card">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-md text-label-md text-on-secondary-container">Clinical Grade AI Certified</span>
+</div>
+</section>
+<!-- Right Side: Login Form -->
+<section class="flex flex-1 items-center justify-center px-margin py-xl bg-surface-container-lowest">
+<div class="w-full max-w-md">
+<!-- Mobile Branding -->
+<div class="md:hidden flex items-center gap-base mb-lg">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">health_metrics</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">HealthAI Precision</span>
+</div>
+<header class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Sign In to HealthCore</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Welcome back. Please enter your institutional credentials.</p>
+</header>
+<!-- Form Section -->
+<form class="space-y-md" onsubmit="return false;">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs" for="email">Institutional Email</label>
+<div class="relative flex items-center input-glow transition-all duration-200">
+<span class="material-symbols-outlined absolute left-4 text-outline">alternate_email</span>
+<input class="w-full h-[56px] pl-12 pr-4 bg-surface border-outline-variant border rounded-xl font-body-md focus:border-primary focus:ring-0 transition-all placeholder:text-outline-variant" id="email" name="email" placeholder="dr.smith@hospital.org" type="email"/>
+</div>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between items-center px-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+<a class="font-label-md text-label-md text-primary hover:underline transition-all" href="#">Forgot Password?</a>
+</div>
+<div class="relative flex items-center input-glow transition-all duration-200">
+<span class="material-symbols-outlined absolute left-4 text-outline">lock</span>
+<input class="w-full h-[56px] pl-12 pr-12 bg-surface border-outline-variant border rounded-xl font-body-md focus:border-primary focus:ring-0 transition-all placeholder:text-outline-variant" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-xs px-xs">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="remember" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="remember">Stay signed in for 24 hours</label>
+</div>
+<button class="w-full h-[56px] bg-primary text-on-primary font-label-md text-label-md rounded-xl hover:bg-primary/90 active:scale-[0.98] transition-all flex items-center justify-center gap-base shadow-sm" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-lg flex items-center">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-4 font-label-sm text-label-sm text-outline-variant uppercase tracking-widest">OR</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- Social Auth Buttons -->
+<div class="space-y-base">
+<button class="w-full h-[56px] bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md rounded-xl hover:bg-surface-container-low transition-all flex items-center px-md gap-md active:scale-[0.98]">
+<img alt="Google" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYevK_K6s3-0h60qZmOT6C-SKq4nqzh0dfPf5N5-r6udrqIDr_HiTAp8I9qRlhb__MVyH4-fxBOlo6qPHVhaexuLI-QwrBEVlT6J02gYO6wBLhOy_W-FWoDmOl-tJoQMoxlk7hfVmu52Dk2PntnAViy79XX3ybd4btDG1O9Qp4X4zlp5xCIxIimPMjV8bzvjpgRi00wVaAT9iAyHAoBHOfToa1jKoTva4ftHDX3Lpb6spFiE9CUmgbAUfIOU9rzejdnyhHgNVYDfg"/>
+<span class="flex-1 text-center">Sign in with Medical Google Account</span>
+</button>
+<button class="w-full h-[56px] bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md rounded-xl hover:bg-surface-container-low transition-all flex items-center px-md gap-md active:scale-[0.98]">
+<span class="material-symbols-outlined text-on-surface text-2xl" style="font-variation-settings: 'FILL' 1;">apps</span>
+<span class="flex-1 text-center">Sign in with Institutional Apple ID</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="mt-lg text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        New to HealthCore? 
+                        <a class="text-primary font-semibold hover:underline decoration-2 underline-offset-4" href="#">Create Account</a>
+</p>
+</footer>
+</div>
+</section>
+</main>
+<!-- Success Message (Toast Placeholder) -->
+<div class="fixed bottom-margin right-margin translate-y-24 opacity-0 transition-all duration-500 z-50" id="login-toast">
+<div class="flex items-center gap-md px-lg py-md bg-secondary-container rounded-xl shadow-lg border border-on-secondary-container/10">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-label-md text-label-md text-on-secondary-container">Authentication Successful</p>
+<p class="font-body-sm text-body-sm text-on-secondary-container/80">Connecting to secure medical portal...</p>
+</div>
+</div>
+</div>
+<script src="login.js">
+ 
+    </script>
+</body></html>

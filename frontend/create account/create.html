@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Create Account | HealthCore AI</title>
+        <script
+            src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet" />
+     <link rel="stylesheet" href="create.css">
+    
+    </head>
+    <body class="bg-background text-on-background font-body-md min-h-screen">
+        <main class="min-h-screen flex flex-col md:flex-row">
+            <!-- Left Side: Abstract Graphic Panel -->
+            <section
+                class="hidden md:flex md:w-1/2 relative overflow-hidden bg-surface-container-low items-center justify-center p-xl">
+                <!-- Background Decoration -->
+                <div class="absolute inset-0 opacity-20 pointer-events-none">
+                    <div
+                        class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-primary-container blur-[120px]"></div>
+                    <div
+                        class="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] rounded-full bg-tertiary blur-[100px]"></div>
+                </div>
+                <div
+                    class="relative z-10 flex flex-col items-center text-center max-w-lg">
+                    <div
+                        class="mb-lg transform hover:scale-105 transition-transform duration-700">
+                        <img class="w-full h-auto drop-shadow-2xl rounded-card"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuChyTuWGenbuDjp8VNE0ZMKpDee_e7ox1tf1IXwBLZ1xwjDvFeOPuB-YVLpWqoq73NZEb4nFpXCw627UACIC4IuCA26sJRfrk8l2qX7HwwrBqCzSjagDq-nSUPtYEkxLTQ_qfDW1QRCwKTddPt4ckPb3i1aZ6J9PMLXnPOTbkbbqyYNjWQAHv2a_C5gxKO8iq-xI8QLIXpSVXZfSZceYMi3DGWLg517mpbPTgsY-M7mPg7eTugVRPtscV-k7Cx2HsaVL_0Ezb8bOoI" />
+                    </div>
+                    <h1
+                        class="font-display-lg text-display-lg text-on-surface mb-base leading-tight">
+                        Clinical Intelligence, Redefined.
+                    </h1>
+                    <p
+                        class="font-body-lg text-body-lg text-on-surface-variant px-md">
+                        Empowering healthcare providers with AI-driven insights
+                        that are as precise as they are human.
+                    </p>
+                    <!-- Floating Stats Component -->
+                    <div class="mt-xl grid grid-cols-2 gap-md w-full">
+                        <div
+                            class="glass-panel p-md rounded-card shadow-sm border border-outline-variant/30 flex items-center gap-base">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                            <div class="text-left">
+                                <p
+                                    class="font-label-sm text-label-sm text-on-surface-variant">HIPAA
+                                    Compliant</p>
+                                <p
+                                    class="font-title-lg text-title-lg text-primary">Secure</p>
+                            </div>
+                        </div>
+                        <div
+                            class="glass-panel p-md rounded-card shadow-sm border border-outline-variant/30 flex items-center gap-base">
+                            <span
+                                class="material-symbols-outlined text-secondary text-3xl">bolt</span>
+                            <div class="text-left">
+                                <p
+                                    class="font-label-sm text-label-sm text-on-surface-variant">Real-time
+                                    Analysis</p>
+                                <p
+                                    class="font-title-lg text-title-lg text-secondary">Instant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Right Side: Registration Form -->
+            <section
+                class="flex-1 flex items-center justify-center p-margin md:p-xl bg-surface-container-lowest">
+                <div class="w-full max-w-md">
+                    <!-- Brand Header (Mobile Visible) -->
+                    <div class="mb-xl text-center md:text-left">
+                        <div
+                            class="flex items-center gap-base mb-md md:hidden justify-center">
+                            <span
+                                class="material-symbols-outlined text-primary text-3xl"
+                                style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                            <span
+                                class="font-headline-md text-headline-md font-bold text-primary">HealthCore
+                                AI</span>
+                        </div>
+                        <h2
+                            class="font-headline-lg text-headline-lg text-on-surface mb-xs">Create
+                            Your Account</h2>
+                        <p
+                            class="font-body-md text-body-md text-on-surface-variant">
+                            Create your account to get started. It's quick,
+                            secure, and gives you access to all clinical
+                            features.
+                        </p>
+                    </div>
+                    <!-- Registration Form -->
+                    <form class="space-y-base" onsubmit="return false;">
+                        <div class="space-y-xs">
+                            <label
+                                class="font-label-md text-label-md text-on-surface ml-base">Full
+                                Name</label>
+                            <input
+                                class="w-full h-12 px-md bg-white border border-outline-variant rounded-card font-body-md text-on-surface transition-all focus:ring-2 focus:ring-primary/20"
+                                placeholder="Dr. Sarah Chen" type="text" />
+                        </div>
+                        <div class="space-y-xs">
+                            <label
+                                class="font-label-md text-label-md text-on-surface ml-base">Institutional
+                                Email</label>
+                            <input
+                                class="w-full h-12 px-md bg-white border border-outline-variant rounded-card font-body-md text-on-surface transition-all focus:ring-2 focus:ring-primary/20"
+                                placeholder="s.chen@memorial-hospital.org"
+                                type="email" />
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-base">
+                            <div class="space-y-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface ml-base">Password</label>
+                                <div class="relative">
+                                    <input
+                                        class="w-full h-12 px-md pr-xl bg-white border border-outline-variant rounded-card font-body-md text-on-surface transition-all"
+                                        id="password" placeholder="••••••••"
+                                        type="password" />
+                                    <button
+                                        class="absolute right-md top-1/2 -translate-y-1/2 text-outline-variant hover:text-primary transition-colors"
+                                        onclick="togglePassword('password')"
+                                        type="button">
+                                        <span
+                                            class="material-symbols-outlined text-body-lg">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="space-y-xs">
+                                <label
+                                    class="font-label-md text-label-md text-on-surface ml-base">Confirm
+                                    Password</label>
+                                <div class="relative">
+                                    <input
+                                        class="w-full h-12 px-md pr-xl bg-white border border-error rounded-card font-body-md text-on-surface transition-all"
+                                        id="confirm-password"
+                                        placeholder="••••••••"
+                                        type="password" />
+                                    <button
+                                        class="absolute right-md top-1/2 -translate-y-1/2 text-outline-variant hover:text-primary transition-colors"
+                                        onclick="togglePassword('confirm-password')"
+                                        type="button">
+                                        <span
+                                            class="material-symbols-outlined text-body-lg">visibility</span>
+                                    </button>
+                                </div>
+                                <p
+                                    class="text-error font-label-sm text-label-sm ml-base mt-1 flex items-center gap-1">
+                                    <span
+                                        class="material-symbols-outlined text-sm">error</span>
+                                    Passwords must match
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Terms Checkbox -->
+                        <div class="flex items-start gap-base pt-sm pb-base">
+                            <input
+                                class="mt-1 h-5 w-5 rounded border-outline-variant text-primary focus:ring-primary/20"
+                                id="terms" type="checkbox" />
+                            <label
+                                class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer"
+                                for="terms">
+                                I agree to the <a
+                                    class="text-primary font-medium hover:underline"
+                                    href="#">Terms of Service</a> and <a
+                                    class="text-primary font-medium hover:underline"
+                                    href="#">Privacy Policy</a>.
+                            </label>
+                        </div>
+                        <!-- Primary Action -->
+                        <button
+                            class="w-full h-12 bg-primary text-on-primary font-label-md text-label-md rounded-card shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-[0.98] mt-sm flex items-center justify-center gap-base">
+                            Create Account
+                            <span
+                                class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                        <!-- Divider -->
+                        <div class="relative py-md flex items-center">
+                            <div
+                                class="flex-grow border-t border-outline-variant"></div>
+                            <span
+                                class="flex-shrink mx-4 text-outline font-label-sm text-label-sm uppercase tracking-widest">OR</span>
+                            <div
+                                class="flex-grow border-t border-outline-variant"></div>
+                        </div>
+                        <!-- Social Signup Options -->
+                        <div class="space-y-base">
+                            <button
+                                class="w-full h-12 px-md border border-outline-variant bg-white rounded-card flex items-center justify-center gap-base font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors">
+                                <svg class="w-5 h-5" viewbox="0 0 24 24">
+                                    <path
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                        fill="#4285F4"></path>
+                                    <path
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                        fill="#34A853"></path>
+                                    <path
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                                        fill="#FBBC05"></path>
+                                    <path
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                        fill="#EA4335"></path>
+                                </svg>
+                                Sign up with Medical Google Account
+                            </button>
+                            <button
+                                class="w-full h-12 px-md border border-outline-variant bg-white rounded-card flex items-center justify-center gap-base font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor"
+                                    viewbox="0 0 24 24">
+                                    <path
+                                        d="M17.05 20.28c-.96.95-2.12 2.1-3.65 2.1-1.48 0-1.94-.88-3.72-.88-1.78 0-2.31.86-3.72.88-1.47 0-2.72-1.22-3.68-2.12-1.97-1.84-3.47-5.22-3.47-8.15 0-4.58 2.88-7.01 5.61-7.01 1.44 0 2.8.96 3.68.96.86 0 2.5-.96 4.19-.96 1.76 0 3.35.91 4.35 2.37-3.56 1.95-3.01 6.84.45 8.1-.69 1.69-1.57 3.32-2.49 4.71zM13.68 3.51c-.75.91-1.78 1.54-2.82 1.46-.14-1.07.39-2.13 1.13-3.02 1.29-1.39 2.58-1.29 2.73-1.23.03 1.11-.29 1.88-1.04 2.79z"></path>
+                                </svg>
+                                Sign up with Institutional Apple ID
+                            </button>
+                        </div>
+                        <!-- Footer Link -->
+                        <div class="text-center pt-lg">
+                            <p
+                                class="font-body-md text-body-md text-on-surface-variant">
+                                Already have an account?
+                                <a
+                                    class="text-primary font-bold hover:underline ml-xs transition-all active:scale-95"
+                                    href="#">Sign In</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <!-- Global Footer -->
+        <footer
+            class="w-full py-xl bg-surface-container-low border-t border-outline-variant">
+            <div
+                class="max-w-7xl mx-auto px-margin flex flex-col md:flex-row justify-between items-center gap-md">
+                <div class="flex flex-col md:flex-row items-center gap-base">
+                    <span
+                        class="font-label-md text-label-md font-bold text-primary">HealthCore
+                        AI</span>
+                    <span
+                        class="font-body-sm text-body-sm text-on-surface-variant">©
+                        2024. HIPAA Compliant Clinical Intelligence.</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-md">
+                    <a
+                        class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Privacy Policy</a>
+                    <a
+                        class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Terms of Service</a>
+                    <a
+                        class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">HIPAA Statement</a>
+                    <a
+                        class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Security</a>
+                </div>
+            </div>
+        </footer>
+        <script src="create.js"></script>
+    </body></html>

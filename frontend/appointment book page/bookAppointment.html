@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>HealthCore AI | Appointment Assistant</title>
+    
+    <!-- Google Fonts: Manrope -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="bookAppointment.css">
+</head>
+<body class="bg-[#f8f9ff] text-[#0d1c2e] font-body-md min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header class="w-full top-0 sticky z-50 bg-white/80 backdrop-blur-md border-b border-[#e5e7eb] flex justify-between items-center px-6 md:px-12 py-4">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-sm font-medium text-[#4b5563]">AI Assistant Online</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <button onclick="window.location.href='../dashboard/dashbord.html'" 
+                    class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-[#4b5563] hover:text-[#2563eb] transition-colors rounded-lg hover:bg-[#f3f4f6]">
+                <span class="material-symbols-outlined text-[20px]">dashboard</span>
+                <span>Dashboard</span>
+            </button>
+            <button onclick="clearChat()" 
+                    class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-[#4b5563] hover:text-red-600 transition-colors rounded-lg hover:bg-[#f3f4f6]">
+                <span class="material-symbols-outlined text-[20px]">delete</span>
+                <span>Clear Chat</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex flex-1 overflow-hidden justify-center">
+        <main class="flex-1 max-w-[800px] w-full flex flex-col relative bg-transparent overflow-hidden px-4 md:px-0">
+            
+            <!-- Chat Feed -->
+            <div class="flex-1 overflow-y-auto pt-8 pb-4 space-y-4 scrollbar-hide" id="chat-feed">
+                <div class="chat-container space-y-6" id="chat-container">
+                    <!-- Messages will be added dynamically -->
+                </div>
+                
+                <!-- Typing Indicator -->
+                <div id="typing-indicator" class="flex gap-4 items-start animate-fade-in hidden">
+                    <div class="w-10 h-10 rounded-full bg-[#e5e7eb] flex-shrink-0 flex items-center justify-center mt-1">
+                        <span class="material-symbols-outlined text-[20px] text-[#4b5563]">smart_toy</span>
+                    </div>
+                    <div class="flex flex-col gap-2 max-w-[85%]">
+                        <div class="bg-[#f3f4f6] p-4 rounded-2xl">
+                            <div class="typing-indicator">
+                                <span class="typing-dot"></span>
+                                <span class="typing-dot"></span>
+                                <span class="typing-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Input Section -->
+            <div class="pb-6 pt-4 bg-gradient-to-t from-[#f8f9ff] via-[#f8f9ff] to-transparent">
+                <div class="chat-container">
+                    <div class="relative flex items-center">
+                        <textarea id="user-input" 
+                                  class="w-full p-4 pr-20 rounded-2xl bg-white border border-[#e5e7eb] focus:ring-2 focus:ring-[#2563eb] focus:border-[#2563eb] outline-none resize-none shadow-sm font-body-lg text-[#1f2937] placeholder:text-[#9ca3af] transition-all" 
+                                  placeholder="Type your message..." 
+                                  rows="1"
+                                  onkeydown="handleKeyPress(event)"></textarea>
+                        <button id="send-button" 
+                                onclick="sendMessage()"
+                                class="absolute right-3 p-3 bg-[#2563eb] text-white rounded-xl hover:bg-[#1d4ed8] active:scale-90 transition-all shadow-md shadow-[#2563eb]/20 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-center text-[#9ca3af] mt-4 font-bold uppercase tracking-[0.2em]">
+                        Powered by HealthCore AI
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="bookAppointment.js"></script>
+</body>
+</html>

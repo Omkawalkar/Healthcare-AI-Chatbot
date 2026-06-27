@@ -1,0 +1,24 @@
+  .glass-panel {
+            background: rgba(255, 250, 243, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .ai-insight-border {
+            position: relative;
+            background: linear-gradient(to right, #2563EB, #A5E9DD);
+            padding: 1px;
+            border-radius: 17px;
+        }
+        .ai-insight-content {
+            background: #ffffff;
+            border-radius: 16px;
+        }
+        input:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+            border-color: #2563EB !important;
+        }
